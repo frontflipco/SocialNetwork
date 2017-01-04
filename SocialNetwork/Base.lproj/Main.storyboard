@@ -169,9 +169,9 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="313" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmy-0k-FO7">
                                 <rect key="frame" x="8" y="141" width="359" height="526"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="313" id="i3W-t7-aAJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="313" id="i3W-t7-aAJ" customClass="PostCell" customModule="SocialNetwork" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="359" height="313"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3W-t7-aAJ" id="0jt-1I-Bxh">
@@ -181,7 +181,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNa-WL-F6j" customClass="ShawdowView" customModule="SocialNetwork" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="343" height="296"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fyX-tR-2FM">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyX-tR-2FM">
                                                             <rect key="frame" x="11" y="220" width="324" height="43"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -253,7 +253,8 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.76101762820512819" green="0.62228839453441076" blue="0.54630867880358647" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="hNa-WL-F6j" firstAttribute="trailing" secondItem="0jt-1I-Bxh" secondAttribute="trailingMargin" id="KyR-Gy-Hq9"/>
                                                 <constraint firstItem="hNa-WL-F6j" firstAttribute="leading" secondItem="0jt-1I-Bxh" secondAttribute="leadingMargin" id="OyE-fG-bPI"/>
@@ -261,6 +262,15 @@
                                                 <constraint firstItem="hNa-WL-F6j" firstAttribute="top" secondItem="0jt-1I-Bxh" secondAttribute="topMargin" id="rmo-a0-QM4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="fyX-tR-2FM" id="bbn-Vk-maC"/>
+                                            <outlet property="likeBtnImage" destination="q77-3N-mrg" id="5WY-Zc-DAf"/>
+                                            <outlet property="likesCountLabel" destination="K8k-1U-3F6" id="hQ1-2i-Tag"/>
+                                            <outlet property="postImage" destination="GlW-5w-DE4" id="cIb-Bv-Of8"/>
+                                            <outlet property="profileImage" destination="EHg-u3-ukE" id="A1Y-1n-GCS"/>
+                                            <outlet property="usernameLabel" destination="gpl-7D-NWl" id="xS3-EL-ln5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -292,6 +302,7 @@
                                                 <state key="normal" image="add-post"/>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -304,7 +315,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BEc-LO-BOT" firstAttribute="leading" secondItem="JJk-OQ-zir" secondAttribute="leading" id="45s-cb-EHP"/>
                             <constraint firstAttribute="trailing" secondItem="BEc-LO-BOT" secondAttribute="trailing" id="53b-6X-2HI"/>
@@ -319,6 +330,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="Wmy-0k-FO7" id="UHG-RV-1Ul"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logInVC" id="hxw-BD-2vs"/>
                     </connections>
                 </viewController>

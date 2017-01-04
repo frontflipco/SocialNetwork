@@ -13,9 +13,10 @@ import Firebase
 import SwiftKeychainWrapper
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -55,7 +56,8 @@ class ViewController: UIViewController {
             }else {
                 print("menan: Firebase Auth Successful")
                 if let user = user {
-                    self.addToKeyChain(id: user.uid)
+                    let userData = ["provider": creditionals.provider]
+                    self.completeSignup(id: user.uid, userData: userData)
                 }
             }
         })
@@ -69,7 +71,8 @@ class ViewController: UIViewController {
                 if error == nil {
                     print("menan: login with email is successful")
                     if let user = user {
-                        self.addToKeyChain(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignup(id: user.uid, userData: userData)
                     }
                     
                 } else {
@@ -77,10 +80,11 @@ class ViewController: UIViewController {
                         if error == nil {
                             print("menan: email user has been created")
                             if let user = user {
-                                self.addToKeyChain(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignup(id: user.uid, userData: userData)
                             }
                         } else {
-                            print("menan: error while creating a user")
+                            print("menan: error while creating a user \(error)")
                         }
                         
                     })
@@ -90,7 +94,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func addToKeyChain(id: String) {
+    func completeSignup(id: String, userData: Dictionary <String,String> ) {
+        
+        DataService.ds.createNewUserInDatabase(uid: id, userData: userData)
         let saveSuccessful: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("menan: Saved UID succesfully \(saveSuccessful)")
         performSegue(withIdentifier: GoToFeed, sender: nil)
