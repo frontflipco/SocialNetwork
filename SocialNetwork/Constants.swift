@@ -10,3 +10,6 @@ import Foundation
 import UIKit
 
 let SHADOW_GREY = CGFloat(255/157)
+let KEY_UID = "uid"
+let GoToFeed = "FeedVC"
+let GoToLogin = "logInVC"

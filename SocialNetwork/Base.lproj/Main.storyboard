@@ -82,6 +82,9 @@
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.16862745098039217" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zW-b9-7bh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,10 +113,51 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HdE-J3-a8Y" secondAttribute="trailing" constant="20" id="xgf-T8-3gf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="HdE-J3-a8Y" id="F7N-C8-NwW"/>
+                        <outlet property="passwordField" destination="5aC-NU-iiP" id="1Cv-AE-san"/>
+                        <segue destination="kUo-3p-ad6" kind="show" identifier="FeedVC" id="e3d-22-kSs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-606" y="207"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="W83-pt-buh">
+            <objects>
+                <viewController id="kUo-3p-ad6" customClass="FeedVC" customModule="SocialNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="697-5c-G43"/>
+                        <viewControllerLayoutGuide type="bottom" id="JeV-AM-U0m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JJk-OQ-zir">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ez-MJ-5XR">
+                                <rect key="frame" x="161" y="318" width="52" height="30"/>
+                                <state key="normal" title="Log Off">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOffPressed:" destination="kUo-3p-ad6" eventType="touchUpInside" id="4yy-4z-CVn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.5490196078431373" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Ez-MJ-5XR" firstAttribute="centerX" secondItem="JJk-OQ-zir" secondAttribute="centerX" id="BPy-53-aRG"/>
+                            <constraint firstItem="1Ez-MJ-5XR" firstAttribute="centerY" secondItem="JJk-OQ-zir" secondAttribute="centerY" id="QIq-dn-qKG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logInVC" id="hxw-BD-2vs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcc-Fn-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="269"/>
         </scene>
     </scenes>
     <resources>

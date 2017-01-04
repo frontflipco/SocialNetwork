@@ -18,6 +18,7 @@
 		684A42B61E1BF52400DA30FF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A42B51E1BF52400DA30FF /* RoundButton.swift */; };
 		684A42B81E1BF62500DA30FF /* CustomFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A42B71E1BF62500DA30FF /* CustomFields.swift */; };
 		684A42BA1E1BF8B900DA30FF /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A42B91E1BF8B900DA30FF /* ShadowButton.swift */; };
+		684A42BC1E1C7FE300DA30FF /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684A42BB1E1C7FE300DA30FF /* FeedVC.swift */; };
 		E43A71344DA10B7D91AC4E87 /* Pods_SocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B61931973483FA843DD9A4 /* Pods_SocialNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		684A42B51E1BF52400DA30FF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		684A42B71E1BF62500DA30FF /* CustomFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFields.swift; sourceTree = "<group>"; };
 		684A42B91E1BF8B900DA30FF /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		684A42BB1E1C7FE300DA30FF /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A0B61931973483FA843DD9A4 /* Pods_SocialNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C537BFF90FA67AD330A71710 /* Pods-SocialNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialNetwork/Pods-SocialNetwork.release.xcconfig"; sourceTree = "<group>"; };
 		CD5C3636C5E8E3D242CF5F40 /* Pods-SocialNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialNetwork/Pods-SocialNetwork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				684A42991E1AFB1C00DA30FF /* AppDelegate.swift */,
 				684A429B1E1AFB1C00DA30FF /* ViewController.swift */,
+				684A42BB1E1C7FE300DA30FF /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				684A42B61E1BF52400DA30FF /* RoundButton.swift in Sources */,
 				684A429A1E1AFB1C00DA30FF /* AppDelegate.swift in Sources */,
 				684A42B81E1BF62500DA30FF /* CustomFields.swift in Sources */,
+				684A42BC1E1C7FE300DA30FF /* FeedVC.swift in Sources */,
 				684A42B21E1BF1FF00DA30FF /* ShawdowView.swift in Sources */,
 				684A42BA1E1BF8B900DA30FF /* ShadowButton.swift in Sources */,
 				684A42B41E1BF26100DA30FF /* Constants.swift in Sources */,
