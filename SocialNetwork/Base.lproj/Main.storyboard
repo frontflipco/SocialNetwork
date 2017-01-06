@@ -280,12 +280,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzV-f2-DXs">
                                         <rect key="frame" x="8" y="8" width="343" height="44"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-47-qYr">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="3yj-47-qYr">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.67843137254901964" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="ad4-Zq-Bbb"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Kuk-bb-yUQ" appends="YES" id="yRr-ee-pCp"/>
+                                                </connections>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-Sa-jwx">
                                                 <rect key="frame" x="60" y="0.0" width="223" height="44"/>
@@ -300,6 +304,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="kJm-wV-ow3"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postBtnPressed:" destination="kUo-3p-ad6" eventType="touchUpInside" id="DIr-7j-ozz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,11 +337,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImage" destination="3yj-47-qYr" id="hwC-kR-2QP"/>
+                        <outlet property="captionField" destination="l2s-Sa-jwx" id="Xbl-E4-Yjd"/>
                         <outlet property="tableView" destination="Wmy-0k-FO7" id="UHG-RV-1Ul"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="logInVC" id="hxw-BD-2vs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcc-Fn-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Kuk-bb-yUQ">
+                    <connections>
+                        <action selector="addImagePressed:" destination="kUo-3p-ad6" id="AES-Wv-W8t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="244" y="203.74812593703149"/>
         </scene>
