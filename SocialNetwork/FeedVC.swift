@@ -40,6 +40,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         DataService.ds.DATABASE_BASE_POSTS.observe(.value, with: { (snapshot) in
             print("menan:\(snapshot.value!)")
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                self.posts = []
                 for snap in snapshot {
                     if let postData = snap.value as? Dictionary <String, AnyObject> {
                         let key = snap.key
@@ -99,7 +100,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBAction func logOffPressed(_ sender: UIButton) {
         
-        if let removeSuccessful: Bool = KeychainWrapper.standard.remove(key: KEY_UID) {
+        let removeSuccessful: Bool = KeychainWrapper.standard.remove(key: KEY_UID)
+        
+        if removeSuccessful {
             print("menan: UID removed from keychain \(removeSuccessful)")
             performSegue(withIdentifier: GoToLogin, sender: nil)
         }
@@ -151,7 +154,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         "likes" : 0
         ]
 
-        let ref = DataService.ds.DATABASE_BASE_POSTS.childByAutoId().setValue(post)
+        _ = DataService.ds.DATABASE_BASE_POSTS.childByAutoId().setValue(post)
         print("menan: updated to firebase")
         
         captionField.text = ""

@@ -53,4 +53,14 @@ class Posts {
             self._likes = likes
         }
     }
+    
+    func adjustLikes(add: Bool) {
+        if add {
+            _likes = _likes + 1
+        }else {
+            _likes = _likes - 1
+        }
+        let postRef = DataService.ds.DATABASE_BASE_POSTS.child(self._postKey).child("likes")
+        postRef.setValue(_likes)
+    }
 }
